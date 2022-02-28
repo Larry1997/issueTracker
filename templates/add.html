@@ -1,0 +1,23 @@
+
+    
+    {% extends 'base.html' %}
+
+    {% block title %}Home{% endblock title  %}
+
+    {% block body %}
+    <div class="container my-3" >
+        <h4>Add a issue</h4>
+        <form action="/" method="POST">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Issue Title</label>
+              <input type="text" class="form-control" id="title" name="title" placeholder="Eg: Broken Roads in surathkal">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Place</label>
+              <input type="text" class="form-control" name="descr" placeholder="Mangalore">
+            </div>
+            <button type="submit" class="btn btn-dark">Submit</button>
+          </form>
+    </div>
+
+    {% endblock body %}

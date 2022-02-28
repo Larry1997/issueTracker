@@ -56,7 +56,41 @@ def delete(sno):
     todo = Todo.query.filter_by(sno=sno).first()
     db.session.delete(todo)
     db.session.commit()
-    return redirect("/")
+    allTodo = Todo.query.all()
+    return render_template("/myissues.html",allTodos=allTodo)
+
+@app.route("/upvote/<int:sno>")
+def upvote(sno):
+    todo = Todo.query.filter_by(sno=sno).first()
+    # db.session.delete(todo)
+    db.session.commit()
+    return "upvoted"
+    # return redirect("/")
+
+@app.route("/upvote/<int:sno>")
+def downvote(sno):
+    todo = Todo.query.filter_by(sno=sno).first()
+    # db.session.delete(todo)
+    db.session.commit()
+    return "Downvoted"
+    # return redirect("/")
+
+@app.route("/add")
+def add():
+    #todo = Todo.query.filter_by(sno=sno).first()
+    # db.session.delete(todo)
+    #db.session.commit()
+    #return "upvoted"
+    return render_template("/add.html")
+
+@app.route("/myissues")
+def myissues():
+    #todo = Todo.query.filter_by(sno=sno).first()
+    # db.session.delete(todo)
+    #db.session.commit()
+    #return "upvoted"
+    allTodo = Todo.query.all()
+    return render_template("/myissues.html",allTodos=allTodo)
 
 if __name__=="main":
     app.run(Debug=True)

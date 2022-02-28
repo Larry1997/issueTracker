@@ -10,7 +10,7 @@
         {% if allTodos|length==0 %}
 
         <div class="alert alert-dark" role="alert">
-            No Issue!
+            No Issues!
           </div>
             
         {% else %}
@@ -21,8 +21,6 @@
                 <th scope="col">Title</th>
                 <th scope="col">Place</th>
                 <th scope="col">Created Date</th>
-                <th scope="col">Status</th>
-                <th scope="col">Upvotes</th>
               </tr>
             </thead>
             <tbody>
@@ -32,11 +30,9 @@
                     <td>{{todo.title}}</td>
                     <td>{{todo.desc}}</td>
                     <td>{{todo.date_created.strftime("%d/%m/%Y")}}</td>
-                    <td>Open/Inprogress/Resolved</td>
-                    <td>{{123}}</td>
                     <td > 
-                        <a href="upvote/{{todo.sno}}" type="button" class="btn btn-primary">Upvote</a>
-                        <a href="downvote/{{todo.sno}}" type="button" class="btn btn-outline-info">Downvote</a>  
+                        <a href="update/{{todo.sno}}" type="button" class="btn btn-outline-info">Update</a>  
+                        <a href="delete/{{todo.sno}}" type="button" class="btn btn-outline-danger">Delete</a> 
                     </td>
                 </tr> 
                 {% endfor %}
