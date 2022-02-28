@@ -1,7 +1,6 @@
 from crypt import methods
 from datetime import datetime
 from email.policy import default
-from turtle import title
 from flask import Flask, redirect, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import desc
