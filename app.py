@@ -75,7 +75,7 @@ def downvote(sno):
     return "Downvoted"
     # return redirect("/")
 
-@app.route("/add")
+@app.route("/add") 
 def add():
     #todo = Todo.query.filter_by(sno=sno).first()
     # db.session.delete(todo)
